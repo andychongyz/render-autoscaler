@@ -1,0 +1,18 @@
+{
+  "email": "andy@postco.co",
+  "password": "ic#YwV#u21TQexN&i6",
+  "interval": "1min",
+  "ownerId": "tea-c07o785ua9vll9l2lisg",
+  "services": [
+    {
+      "name": "postco-web-staging",
+      "waitTimeAfterScaling": 5,
+      "scaleUpPercentage": 70,
+      "upStep": 1,
+      "maxInstanceCount": 3,
+      "scaleDownPercentage": 40,
+      "minInstanceCount": 1,
+      "downStep": 1
+    }
+  ]
+}

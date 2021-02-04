@@ -2,6 +2,7 @@ import Bree from "bree";
 import Graceful from "@ladjs/graceful";
 import Cabin from "cabin";
 import path from "path";
+import readConfig from "./read_config";
 
 //
 // we recommend using Cabin as it is security-focused
@@ -9,16 +10,15 @@ import path from "path";
 // <https://cabinjs.com>
 //
 const logger = new Cabin();
-console.log("job:", path.join(__dirname, "jobs", "autoscale"));
 
 const bree = new Bree({
-  logger,
+  root: false,
+  // logger,
   jobs: [
     {
       name: "autoscale",
-      // interval: "1m",
-      interval: "3s",
-      path: path.join(__dirname, "jobs", "autoscale"),
+      interval: readConfig().interval,
+      path: path.join(__dirname, "jobs", "autoscale.js"),
     },
   ],
 });
